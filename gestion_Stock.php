@@ -16,3 +16,4 @@ function diminuerStock($medicament, $quantiteVendue) {
         echo "Alerte : Le stock de " . $medicament->nom . " est inférieur au seuil d'alerte (" . $medicament->seuilAlerte . ").<br>";
     }
 }
+?>
