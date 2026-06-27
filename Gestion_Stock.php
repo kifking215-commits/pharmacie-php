@@ -1,9 +1,18 @@
-// Étape 12 : Fonction pour diminuer le stock lors d'une vente ou d'une sortie
-function diminuerStock($medicament, $quantite) {
-    $medicament->quantite -= $quantite;
-}
+<?php
+function diminuerStock($medicament, $quantiteVendue) {
+    if ($quantiteVendue <= 0) {
+        echo "La quantité vendue doit être supérieure à zéro.<br>";
+        return;
+    }
 
-// Étape 13 : Fonction pour réapprovisionner le stock lors d'une livraison
-function reapprovisionner($medicament, $quantite) {
-    $medicament->quantite += $quantite;
+    if ($quantiteVendue > $medicament->quantite) {
+        echo "Stock insuffisant pour la vente de " . $quantiteVendue . " unités de " . $medicament->nom . ".<br>";
+        return;
+    }
+
+    $medicament->quantite -= $quantiteVendue;
+
+    if ($medicament->quantite < $medicament->seuilAlerte) {
+        echo "Alerte : Le stock de " . $medicament->nom . " est inférieur au seuil d'alerte (" . $medicament->seuilAlerte . ").<br>";
+    }
 }
