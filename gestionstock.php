@@ -1,6 +1,6 @@
 <?php
 
-require_once "Medicament.php";
+include "Medicament.php";
 
 function diminuerStock($medicament,$quantite)
 {
@@ -13,5 +13,8 @@ function reapprovisionner($medicament,$quantite)
 }
 function exporterCSV($medicament)
 {
-    return $medicament->nom.";".$medicament->quantite.";".$medicament->seuilAlerte;
+    return [
+        $medicament->nom,
+        $medicament->quantite ,
+        $medicament->seuilAlerte];
 }
