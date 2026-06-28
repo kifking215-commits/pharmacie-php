@@ -4,7 +4,7 @@ require 'Medicament.php';
 require 'gestion_stock.php';
 require 'gestionstock.php';
 
-$medicament = new Medicament("Paracétamol", 100, 20);
+$medicament = new Medicament("Paracétamol","Amoxiciline", 100, 20);
 
 diminuerStock($medicament, 10);
 
