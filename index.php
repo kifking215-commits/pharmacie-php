@@ -4,7 +4,7 @@ require 'Medicament.php';
 require 'gestion_stock.php';
 require 'gestionstock.php';
 
-diminuerStock($medicament, 10);
+$medicament= new Medicament("Paracetamol","Amoxiciline",100,20);
 
 echo "Nom : " . $medicament->nom . "<br>";
 echo "Stock actuel : " . $medicament->quantite;
