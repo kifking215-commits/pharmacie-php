@@ -3,9 +3,10 @@
 require 'Medicament.php';
 require 'gestion_stock.php';
 require 'gestionstock.php';
+require 'gestion_Stock.php';
 
 $medicament= new Medicament("Paracetamol","Amoxiciline",100,20);
-
+diminuerStock($medicament, 30);
 echo "Nom : " . $medicament->nom . "<br>";
 echo "Stock actuel : " . $medicament->quantite;
 echo "Stock initial : " . $paracetamol->quantite . "<br>";
