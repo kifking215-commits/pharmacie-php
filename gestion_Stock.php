@@ -16,4 +16,17 @@ function diminuerStock($medicament, $quantiteVendue) {
         echo "Alerte : Le stock de " . $medicament->nom . " est inférieur au seuil d'alerte (" . $medicament->seuilAlerte . ").<br>";
     }
 }
-?>
+
+function exporterStockCSV($stock, $nomFichier = "export_stock.csv") {
+    $fichier = fopen($nomFichier, "w");
+    fputcsv($fichier, ["Nom", "Quantite", "Seuil Alerte"]);
+    foreach ($stock as $medicament) {
+        fputcsv($fichier, [
+            $medicament['nom'], 
+            $medicament['quantite'], 
+            $medicament['seuil_alerte']
+        ]);
+    }
+    
+    fclose($fichier);
+}
