@@ -17,3 +17,17 @@ function diminuerStock($medicament, $quantiteVendue) {
     }
 }
 ?>
+
+function exporterStockCSV($stock, $nomFichier = "export_stock.csv") {
+    $fichier = fopen($nomFichier, "w");
+    fputcsv($fichier, ["Nom", "Quantite", "Seuil Alerte"]);
+    foreach ($stock as $medicament) {
+        fputcsv($fichier, [
+            $medicament['nom'], 
+            $medicament['quantite'], 
+            $medicament['seuil_alerte']
+        ]);
+    }
+    
+    fclose($fichier);
+}
