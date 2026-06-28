@@ -30,3 +30,4 @@ function exporterStockCSV($stock, $nomFichier = "export_stock.csv") {
     
     fclose($fichier);
 }
+?>
