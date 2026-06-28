@@ -2,6 +2,7 @@
 
 require 'Medicament.php';
 require 'gestion_stock.php';
+require 'gestionstock.php';
 
 $medicament = new Medicament("Paracétamol", 100, 20);
 
