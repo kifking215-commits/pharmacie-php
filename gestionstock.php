@@ -9,7 +9,7 @@ function diminuerStock($medicament,$quantite)
 
 function reapprovisionner($medicament,$quantite)
 {
-    $medicament->quantite -= $quantite;
+    $medicament->quantite += $quantite;
 }
 function exporterCSV($medicament)
 {
