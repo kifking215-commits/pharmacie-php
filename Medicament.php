@@ -1,6 +1,6 @@
 <?php
 
-class Medicament {
+class medicament {
     public $nom;
     public $quantite;
     public $seuilAlerte;
