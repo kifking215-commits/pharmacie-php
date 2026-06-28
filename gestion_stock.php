@@ -18,3 +18,4 @@ function exporterCSV($medicament)
         $medicament->quantite ,
         $medicament->seuilAlerte];
 }
+?>
