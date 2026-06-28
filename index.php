@@ -18,4 +18,8 @@ unites.<br>";
 echo "Stock apres tentative(+20):" .
 $medicament->quantite."
 unites.<br>";
+// Simulation d'une livraison de 20 unités
+reapprovisionner($paracetamol, 20);
+
+echo "Stock après livraison (+20) : " . $paracetamol->quantite . " unités.<br>";
 ?>
