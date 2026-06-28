@@ -1,24 +1,22 @@
 <?php
 
 require 'Medicament.php';
-require 'gestion_stock.php';
 require 'gestionstock.php';
-require 'gestion_Stock.php';
 
-$medicament= new Medicament("Paracetamol","Amoxiciline",100,20);
+$medicament = new Medicament("Paracetamol", "Amoxiciline", 100, 20);
 diminuerStock($medicament, 30);
 echo "Nom : " . $medicament->nom . "<br>";
 echo "Stock actuel : " . $medicament->quantite;
-echo "Stock initial : " . $paracetamol->quantite . "<br>";
+echo "Stock initial : " . $medicament->quantite . "<br>";
 echo "<br>--- Test Etape 16 (Bug Reapprovionnement) ---<br>";
-echo"Stock avant : " .
-$medicament->Quantite . "
+echo "Stock avant : " .
+$medicament->quantite . "
 unites.<br>";
 echo "Stock apres tentative(+20):" .
-$medicament->quantite."
+$medicament->quantite . "
 unites.<br>";
 // Simulation d'une livraison de 20 unités
-reapprovisionner($paracetamol, 20);
+reapprovisionner($medicament, 20);
 
-echo "Stock après livraison (+20) : " . $paracetamol->quantite . " unités.<br>";
+echo "Stock après livraison (+20) : " . $medicament->quantite . " unités.<br>";
 ?>
