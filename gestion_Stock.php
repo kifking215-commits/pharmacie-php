@@ -28,6 +28,6 @@ function exporterStockCSV($stock, $nomFichier = "export_stock.csv") {
             $medicament['seuil_alerte']
         ]);
     }
-?>    
     fclose($fichier);
 }
+?>
